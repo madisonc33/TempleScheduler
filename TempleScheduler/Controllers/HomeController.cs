@@ -18,6 +18,13 @@ namespace TempleScheduler.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public IActionResult Index()
         {
             return View();
