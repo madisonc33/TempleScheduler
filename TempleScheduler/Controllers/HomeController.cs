@@ -30,6 +30,14 @@ namespace TempleScheduler.Controllers
             return View();
         }
 
+        //testing - not necessary
+        [HttpGet]
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public IActionResult Privacy()
         {
             return View();
