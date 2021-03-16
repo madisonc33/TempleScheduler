@@ -21,10 +21,10 @@ namespace TempleScheduler.Pages
 
         public DateTime ReserveTime { get; set; }
 
-        public void OnGet(string returnUrl, DateTime AvailableTime) //pass through and pass thorugh as variable
+        public void OnGet(string returnUrl, int timeId) //pass through and pass thorugh as variable
         {
-            ReserveTime = (DateTime)context.TimeSlots
-                .Where(i => i.TimeId == AvailableTime);
+            //ReserveTime = (DateTime)context.TimeSlots
+            //    .Where(i => i.TimeId == timeId);
             ReturnUrl = returnUrl ?? "/";
             //Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
         }
