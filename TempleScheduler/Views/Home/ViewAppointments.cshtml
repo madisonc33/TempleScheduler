@@ -1,6 +1,5 @@
 ﻿<!-- Melissa's Page -->
 <!DOCTYPE html>
-@model IEnumerable<Appointment>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -10,7 +9,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    @foreach (var x in Model)
+    @foreach (var x in Model.Appointment)
     {
         <div class="card text-white bg-info mb-3" style="width: 18rem;">
             <div class="card-body">
