@@ -12,18 +12,21 @@
 <body>
     @foreach (var x in Model.appointments)
     {
-        <div class="card text-white bg-secondary mb-3" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Time: @x.ApptTime</h5>
-                <p class="card-text">Group Name: @x.Name</p>
+        <div class="card-deck">
+            <div class="card text-white bg-secondary mb-3" style="width: 18rem;">
+                <div class="card-header">
+                    <h6 class="card-text">Group Name: @x.Name</h6>
+                </div>
+                <ul class="list-group list-group-flush text-black-50">
+                    <li class="list-group-item">Date: @x.ApptTime.ToString("dddd, dd MMMM yyyy")</li>
+                    <li class="list-group-item">Time: @x.ApptTime.ToString("h:mm tt")</li>
+                    <li class="list-group-item">Group Size: @x.Size people</li>
+                    <li class="list-group-item">Email Address: @x.Email</li>
+                    <!-- if not null -->
+                    <li class="list-group-item">Phone Number: @x.PhoneNum</li>
+                </ul>
+                <br />
             </div>
-            <ul class="list-group list-group-flush text-black-50">
-                <li class="list-group-item">Group Size: @x.Size people</li>
-                <li class="list-group-item">Email Address: @x.Email</li>
-                <!-- if not null -->
-                <li class="list-group-item">Phone Number: @x.PhoneNum</li>
-            </ul>
-            <br />
         </div>
     }
 </body>
