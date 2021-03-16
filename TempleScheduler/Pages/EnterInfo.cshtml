@@ -2,3 +2,38 @@
 @model TempleScheduler.Pages.EnterInfoModel
 @{
 }
+
+<div class="text-center">
+    <h2 class="bg-primary text-white text-center">Enter Your Group Information for Your Upcoming Visit</h2>
+</div>
+
+<form class="text-center" asp-action="EnterInfo" method="post">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Time" >Time:</label>
+        <input asp-for="Time" value="@Model.ReserveTime" readonly required />
+    </div>
+    <div>
+        <label asp-for="Name">Name of Group:</label>
+        <input asp-for="Name" required />
+    </div>
+    <br />
+
+    <label asp-for="Size">Size of Group:</label>
+    <input asp-for="Size" required />
+    <br />
+
+    <label asp-for="Email">Email Address</label>
+    <input asp-for="Email" required />
+    <br />
+
+    <label asp-for="PhoneNum">Phone Number</label>
+    <input asp-for="PhoneNum" /> <!--OPTIONAL-->
+    <br />
+
+    <br /><br />
+    <div class="text-center">
+        <button class="btn btn-danger" type="submit">Submit Info For Reservation</button>
+    </div>
+</form>
+<!--WANT TO RETURN USER TO HOMEPAGE AFTER SUBMIT INFO, or Should we have thank you page?-->
