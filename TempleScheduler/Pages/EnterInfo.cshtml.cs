@@ -30,12 +30,12 @@ namespace TempleScheduler.Pages
 
         public IActionResult OnPost(int timeId, string returnUrl) //saves to DB
         {
-            Appointment appointment = context.appointments.FirstOrDefault(a => a.TimeId == timeId);
+            //Appointment appointment = context.appointments.FirstOrDefault(a => a.TimeId == timeId);
 
             //took out from ch 9
             //Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
 
-            context.AddItem(appointment, 1);
+            //context.AddItem(appointment, 1);
 
             //took out from ch 9
             //HttpContext.Session.SetJson("cart", Cart);
