@@ -18,30 +18,38 @@ namespace TempleScheduler.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Index()
+        public IActionResult SignUp()
         {
             return View();
         }
 
-        //testing - not necessary
         [HttpGet]
-        public IActionResult Privacy()
+        public IActionResult EnterInfo()
         {
             return View();
         }
 
         [HttpPost]
+        public IActionResult EnterInfo(Appointment appointment)
+        {
+            return View(appointment);
+        }
+
+        public IActionResult ViewAppointments()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
