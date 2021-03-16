@@ -22,6 +22,7 @@ info.-->
         <thead>
             <tr>
                 <!--TABLE HEADERS-->
+                <th class="font-weight-bold">Session Date</th>
                 <th class="font-weight-bold">Session Time</th>
                 <th class="font-weight-bold">Reserve</th>
 
@@ -33,7 +34,7 @@ info.-->
             {
             <tr>
                 <td>@i.AvailableTime.ToString("dddd, dd MMMM yyyy H:hh")</td>
-                <td>@i.AvailableTime</td>
+                <td>@i.AvailableTime.ToString("H:hh")</td>
             </tr>
                 
             }
