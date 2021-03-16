@@ -23,7 +23,8 @@ namespace TempleScheduler.Pages
 
         public void OnGet(string returnUrl, DateTime AvailableTime) //pass through and pass thorugh as variable
         {
-            ReserveTime = AvailableTime;
+            ReserveTime = (DateTime)context.TimeSlots
+                .Where(i => i.TimeId == AvailableTime);
             ReturnUrl = returnUrl ?? "/";
             //Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
         }
