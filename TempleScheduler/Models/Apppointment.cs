@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TempleScheduler.Models
 {
-    public class Apppointment
+    public class Appointment
     {
         [Key]
         [Required]
