@@ -8,6 +8,9 @@ time, they are routed to a form that has the date info set,
     but allows the user to enter their
 info.-->
 
+@model AvailableTasksViewModel
+
+
 @{
     ViewData["Title"] = "Sign Up";
 }
@@ -16,13 +19,29 @@ info.-->
 
     <!--TABLE-->
     <table>
-        <tr>
-            <!--TABLE HEADERS-->
-            <th class="font-weight-bold">Session Date</th>
-            <th class="font-weight-bold">Session Time</th>
-            <th class="font-weight-bold">Reserve</th>
+        <thead>
+            <tr>
+                <!--TABLE HEADERS-->
+                <th class="font-weight-bold">Session Date</th>
+                <th class="font-weight-bold">Session Time</th>
+                <th class="font-weight-bold">Reserve</th>
 
-        </tr>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var i in Model.AreAvailable)
+            {
+            <tr>
+                <td>@i.AvailableTime</td>
+            </tr>
+                
+            }
+
+        </tbody>
+
+      
+
 
         <!--INSERT DATA INTO TABLE THROUGH LOOP-->
         @*@foreach (var i in Model.x)
