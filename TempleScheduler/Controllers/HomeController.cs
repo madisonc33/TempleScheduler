@@ -34,11 +34,11 @@ namespace TempleScheduler.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public IActionResult EnterInfo(Appointment appointment)
-        //{
-        //    return View(appointment);
-        //}
+        [HttpPost]
+        public IActionResult EnterInfo(Appointment appointment)
+        {
+            return View(appointment);
+        }
 
         public IActionResult ViewAppointments()
         {
