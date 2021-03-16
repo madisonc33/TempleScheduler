@@ -7,3 +7,30 @@ hour from 8:00 am – 8:00 pm (i.e. the last tour starts at 8:00 pm.)
 time, they are routed to a form that has the date info set,
     but allows the user to enter their
 info.-->
+
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<div class="col-10">
+
+    <!--TABLE-->
+    <table>
+        <tr>
+            <!--TABLE HEADERS-->
+            <th class="font-weight-bold">Session Date</th>
+            <th class="font-weight-bold">Session Time</th>
+            <th class="font-weight-bold">Reserve</th>
+
+        </tr>
+
+        <!--INSERT DATA INTO TABLE THROUGH LOOP-->
+        @foreach (var i in Model.xxxx)
+        {
+            //Connect to the partial view to display
+            <partial name="SignUpSummary" model="i" />
+        }
+
+    </table>
+
+</div>
