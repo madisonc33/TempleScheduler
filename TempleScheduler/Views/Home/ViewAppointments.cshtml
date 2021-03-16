@@ -1,6 +1,6 @@
 ﻿<!-- Melissa's Page -->
-
 <!DOCTYPE html>
+@model IEnumerable<Appointment>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -10,6 +10,21 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-
+    @foreach (var x in Model)
+    {
+        <div class="card text-white bg-info mb-3" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Time: @x.ApptTime</h5>
+                <p class="card-text">Group Name: @x.Name</p>
+            </div>
+            <ul class="list-group list-group-flush text-black-50">
+                <li class="list-group-item">Group Size: @x.Size people</li>
+                <li class="list-group-item">Email Address: @x.Email</li>
+                <!-- if not null -->
+                <li class="list-group-item">Phone Number: @x.PhoneNum</li>
+            </ul>
+            <br />
+        </div>
+    }
 </body>
 </html>
