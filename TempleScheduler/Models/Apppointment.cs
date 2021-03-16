@@ -7,21 +7,21 @@ namespace TempleScheduler.Models
     {
         [Key]
         [Required]
-        public int iAppointmentId { get; set; }
+        public int AppointmentId { get; set; }
 
         [Required]
-        public DateTime dApptTime { get; set; }
+        public DateTime ApptTime { get; set; }
 
         [Required]
-        public string sName { get; set; }
+        public string Name { get; set; }
 
         [Required]
-        public int iSize { get; set; }
+        public int Size { get; set; }
 
         [Required]
-        public string sEmail { get; set; }
+        public string Email { get; set; }
 
         [Required]
-        public int iPhoneNum { get; set; }
+        public int PhoneNum { get; set; }
     }
 }
