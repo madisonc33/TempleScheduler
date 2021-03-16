@@ -39,13 +39,13 @@ info.-->
                 <td>@i.AvailableTime.ToString("h:mm tt")</td>
                 <td>
                     <form id="@i.TimeId" asp-page="/EnterInfo" method="post">
-                        <input type="hidden" asp-for="TimeId" />
+                        <input type="hidden" asp-for="@i.TimeId" />
                         <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
                         <span class="card-text p-1">
                             <button type="submit" class="btn-success btn-sm pull-right" style="float:right">
                                 Reserve
                             </button>
-                         </span>
+                        </span>
                     </form>
                 </td>
             </tr>
