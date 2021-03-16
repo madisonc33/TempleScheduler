@@ -36,6 +36,9 @@ namespace TempleScheduler
             {
                 options.UseSqlite(Configuration["ConnectionStrings:TimeSlotListConnection"]);
             });
+
+            services.AddRazorPages();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,7 +64,10 @@ namespace TempleScheduler
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
+                endpoints.MapRazorPages();
             });
+
+           
         }
     }
 }
