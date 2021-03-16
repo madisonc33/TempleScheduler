@@ -16,5 +16,6 @@
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Models\ViewModels\" />
     <Folder Include="Infastructure\" />
+    <Folder Include="Pages\" />
   </ItemGroup>
 </Project>
