@@ -1,4 +1,14 @@
-﻿<form class="text-center" asp-action="EnterInfo" method="post">
+﻿@{
+    ViewBag.Title = "Top 5 Resturants In Provo";
+}
+
+@model TempleScheduler.Models.Appointment
+
+<div class="text-center">
+    <h2 class="bg-primary text-white text-center">Enter Your Group Information for Your Upcoming Visit</h2>
+</div>
+
+<form class="text-center" asp-action="EnterInfo" method="post">
     <div asp-validation-summary="All"></div>
     <div>
         <label asp-for="Name">Name of Group:</label>
@@ -14,7 +24,7 @@
     <input asp-for="Email" required />
     <br />
 
-    <label asp-for="PhonNum">Phone Number</label>
+    <label asp-for="PhoneNum">Phone Number</label>
     <input asp-for="PhoneNum" /> <!--OPTIONAL-->
     <br />
 
