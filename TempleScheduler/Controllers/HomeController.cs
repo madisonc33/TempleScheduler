@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TempleScheduler.Models;
+using TempleScheduler.Models.ViewModels;
 
 namespace TempleScheduler.Controllers
 {
@@ -13,12 +14,15 @@ namespace TempleScheduler.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        private AppointmentListContext context { get; set; }
+        private AppointmentListContext AppointmentContext { get; set; }
 
-        public HomeController(ILogger<HomeController> logger, AppointmentListContext con)
+        private TimeSlotListContext TimeContext { get; set; }
+
+        public HomeController(ILogger<HomeController> logger, AppointmentListContext Acon, TimeSlotListContext Tcon)
         {
             _logger = logger;
-            context = con;
+            AppointmentContext = Acon;
+            TimeContext = Tcon;
         }
 
         public IActionResult Index()
@@ -28,7 +32,11 @@ namespace TempleScheduler.Controllers
 
         public IActionResult SignUp()
         {
-            return View();
+            return View(new AvailableTasksViewModel
+            {
+                AreAvailable = TimeContext.TimeSlots
+                    .Where(x => x.IsAvailable ==true)
+            });
         }
 
         [HttpGet]
@@ -42,8 +50,8 @@ namespace TempleScheduler.Controllers
         {
             if (ModelState.IsValid)
             {
-                context.appointments.Add(appoint);
-                context.SaveChanges();
+                AppointmentContext.appointments.Add(appoint);
+                AppointmentContext.SaveChanges();
             }
             return View("Index");
         }
