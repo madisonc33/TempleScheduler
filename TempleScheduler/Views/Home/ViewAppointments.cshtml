@@ -1,6 +1,7 @@
 ﻿<!-- Melissa's Page -->
 <!DOCTYPE html>
 <html lang="en">
+@model AppointmentListContext
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,9 +10,9 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    @foreach (var x in Model.Appointment)
+    @foreach (var x in Model.appointments)
     {
-        <div class="card text-white bg-info mb-3" style="width: 18rem;">
+        <div class="card text-white bg-secondary mb-3" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">Time: @x.ApptTime</h5>
                 <p class="card-text">Group Name: @x.Name</p>
