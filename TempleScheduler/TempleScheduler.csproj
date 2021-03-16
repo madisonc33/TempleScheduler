@@ -14,5 +14,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Models\ViewModels\" />
   </ItemGroup>
 </Project>

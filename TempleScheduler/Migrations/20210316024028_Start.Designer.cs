@@ -9,8 +9,8 @@ using TempleScheduler.Models;
 namespace TempleScheduler.Migrations
 {
     [DbContext(typeof(AppointmentListContext))]
-    [Migration("20210316021626_Initial")]
-    partial class Initial
+    [Migration("20210316024028_Start")]
+    partial class Start
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

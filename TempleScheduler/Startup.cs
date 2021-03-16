@@ -31,6 +31,11 @@ namespace TempleScheduler
             {
                 options.UseSqlite(Configuration["ConnectionStrings:AppointmentListConnection"]);
             });
+
+            services.AddDbContext<TimeSlotListContext>(options =>
+            {
+                options.UseSqlite(Configuration["ConnectionStrings:TimeSlotListConnection"]);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
