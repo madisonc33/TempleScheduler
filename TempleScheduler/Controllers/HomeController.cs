@@ -13,9 +13,12 @@ namespace TempleScheduler.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private AppointmentListContext context { get; set; }
+
+        public HomeController(ILogger<HomeController> logger, AppointmentListContext con)
         {
             _logger = logger;
+            context = con;
         }
 
         public IActionResult Index()
@@ -35,9 +38,14 @@ namespace TempleScheduler.Controllers
         }
 
         [HttpPost]
-        public IActionResult EnterInfo(Appointment appointment)
+        public IActionResult EnterInfo(Appointment appoint)
         {
-            return View(appointment);
+            if (ModelState.IsValid)
+            {
+                context.appointments.Add(appoint);
+                context.SaveChanges();
+            }
+            return View("Index");
         }
 
         public IActionResult ViewAppointments()
