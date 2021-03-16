@@ -33,7 +33,7 @@ info.-->
             @foreach (var i in Model.AreAvailable)
             {
             <tr>
-                <td>@i.AvailableTime</td>
+                <td>@i.AvailableTime.ToString("dddd, dd MMMM yyyy")</td>
             </tr>
                 
             }
