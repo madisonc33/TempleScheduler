@@ -58,7 +58,7 @@ namespace TempleScheduler.Controllers
 
         public IActionResult ViewAppointments()
         {
-            return View();
+            return View(AppointmentContext);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
