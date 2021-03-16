@@ -38,6 +38,7 @@ info.-->
                 <td>@i.AvailableTime.ToString("dddd, dd MMMM yyyy")</td>
                 <td>@i.AvailableTime.ToString("h:mm tt")</td>
                 <td>
+                    TEST
                     <form id="@i.TimeId" asp-page="/EnterInfo" method="post">
                         <input type="hidden" asp-for="@i.TimeId" />
                         <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
