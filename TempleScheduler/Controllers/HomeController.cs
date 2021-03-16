@@ -39,23 +39,6 @@ namespace TempleScheduler.Controllers
             });
         }
 
-        [HttpGet]
-        public IActionResult EnterInfo()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult EnterInfo(Appointment appoint)
-        {
-            if (ModelState.IsValid)
-            {
-                AppointmentContext.appointments.Add(appoint);
-                AppointmentContext.SaveChanges();
-            }
-            return View("Index");
-        }
-
         public IActionResult ViewAppointments()
         {
             return View(AppointmentContext);
