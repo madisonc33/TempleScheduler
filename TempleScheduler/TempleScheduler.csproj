@@ -13,7 +13,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.13" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Shared\Components\" />
     <Folder Include="Models\ViewModels\" />
     <Folder Include="Infastructure\" />
     <Folder Include="Pages\" />
