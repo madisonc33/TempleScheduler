@@ -8,13 +8,18 @@ using TempleScheduler.Models;
 
 namespace TempleScheduler.Pages
 {
+    [IgnoreAntiforgeryToken(Order = 1001)]
     public class EnterInfoModel : PageModel
     {
-        private TimeSlotListContext context;
+        private TimeSlotListContext Timecontext;
 
-        public EnterInfoModel(TimeSlotListContext con)
+        private AppointmentListContext Apptcontext;
+
+        public EnterInfoModel(TimeSlotListContext con, AppointmentListContext appt)
         {
-            context = con;
+            Timecontext = con;
+
+            Apptcontext = appt;
         }
 
         public string ReturnUrl { get; set; }
@@ -23,7 +28,7 @@ namespace TempleScheduler.Pages
 
         public void OnGet(string returnUrl, int timeId) //pass through and pass thorugh as variable
         {
-            var data = context.TimeSlots
+            var data = Timecontext.TimeSlots
                 .Where(i => i.TimeId == timeId);
             foreach (var i in data)
             {
@@ -36,7 +41,24 @@ namespace TempleScheduler.Pages
         public IActionResult OnPost(string Time, string Name, int Size, string Email, int PhoneNum) //saves to DB
         {
             //Appointment appointment = context.appointments.FirstOrDefault(a => a.TimeId == timeId);
-            //context.Add(appt);
+            var appt = new Appointment
+            {
+                ApptTime = DateTime.Parse(Time),
+                Name = Name,
+                Size = Size,
+                Email = Email,
+                PhoneNum = PhoneNum
+            };
+            Apptcontext.appointments.Add(appt);
+            Apptcontext.SaveChanges();
+
+            var time = Timecontext.TimeSlots
+                .Where(x => x.AvailableTime == appt.ApptTime);
+
+            foreach (var i in time)
+            {
+                i.IsAvailable = false;
+            }
 
             return RedirectToPage("Index");
         }
