@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TempleScheduler.Migrations
 {
-    public partial class Start : Migration
+    public partial class starterup : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,7 +17,7 @@ namespace TempleScheduler.Migrations
                     Name = table.Column<string>(nullable: false),
                     Size = table.Column<int>(nullable: false),
                     Email = table.Column<string>(nullable: false),
-                    PhoneNum = table.Column<int>(nullable: false)
+                    PhoneNum = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

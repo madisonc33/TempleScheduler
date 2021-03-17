@@ -52,7 +52,7 @@ namespace TempleScheduler.Pages
                 Name = Name,
                 Size = Size,
                 Email = Email
-                //PhoneNum = Int64.Parse(PhoneNum)
+                PhoneNum = Int64.Parse(PhoneNum)
             };
             Apptcontext.appointments.Add(appt);
             Apptcontext.SaveChanges();
