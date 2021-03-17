@@ -4,14 +4,15 @@
 }
 
 <div class="text-center">
-    <h2 class="bg-primary text-white text-center">Enter Your Group Information for Your Upcoming Visit</h2>
+    <h2 class="bg-secondary mb-3 text-white text-center">Enter Your Group Information for Your Upcoming Visit</h2>
 </div>
 
 <form class="text-center" asp-action="EnterInfo" method="post">
+    <!--<input type="hidden" asp-for="TimeId" />-->
     <div asp-validation-summary="All"></div>
     <div>
         <label asp-for="Time">Time:</label>
-        <input size="50" asp-for="Time" value="@Model.ReserveTime.ToString("dddd, dd MMMM yyyy, h:mm tt")" readonly required />
+        <input size="30" asp-for="Time" value="@Model.ReserveTime.ToString("dddd, dd MMMM yyyy, h:mm tt")" readonly required />
     </div>
     <div>
         <label asp-for="Name">Name of Group:</label>
@@ -33,7 +34,7 @@
 
     <br /><br />
     <div class="text-center">
-        <button class="btn btn-danger" type="submit">Submit Info For Reservation</button>
+        <button class="btn bg-secondary mb-3" type="submit">Submit Info For Reservation</button>
     </div>
 </form>
 <!--WANT TO RETURN USER TO HOMEPAGE AFTER SUBMIT INFO, or Should we have thank you page?-->
