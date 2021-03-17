@@ -44,17 +44,6 @@ namespace TempleScheduler.Controllers
             return View(AppointmentContext);
         }
 
-        [HttpPost]
-        public IActionResult EnterInfo(Appointment appt)
-        {
-            if (ModelState.IsValid)
-            {
-                AppointmentContext.appointments.Add(appt);
-                AppointmentContext.SaveChanges();
-            }
-            return View("Index");
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
