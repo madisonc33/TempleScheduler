@@ -33,8 +33,8 @@ namespace TempleScheduler.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("PhoneNum")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("PhoneNum")
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("Size")
                         .HasColumnType("INTEGER");

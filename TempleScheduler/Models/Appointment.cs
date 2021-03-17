@@ -22,7 +22,6 @@ namespace TempleScheduler.Models
         [Required]
         public string Email { get; set; }
 
-        [Required]
-        public int PhoneNum { get; set; }
+        public string PhoneNum { get; set; }
     }
 }

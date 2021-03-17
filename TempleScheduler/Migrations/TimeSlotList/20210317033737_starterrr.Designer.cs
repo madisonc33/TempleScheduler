@@ -9,8 +9,8 @@ using TempleScheduler.Models;
 namespace TempleScheduler.Migrations.TimeSlotList
 {
     [DbContext(typeof(TimeSlotListContext))]
-    [Migration("20210316024112_Start")]
-    partial class Start
+    [Migration("20210317033737_starterrr")]
+    partial class starterrr
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

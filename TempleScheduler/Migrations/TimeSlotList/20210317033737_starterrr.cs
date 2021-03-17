@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TempleScheduler.Migrations.TimeSlotList
 {
-    public partial class Start : Migration
+    public partial class starterrr : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

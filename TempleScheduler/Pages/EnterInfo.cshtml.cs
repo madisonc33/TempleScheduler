@@ -44,7 +44,7 @@ namespace TempleScheduler.Pages
         }
 
         //this method is called when the user posts the appointment online. It takes in the data and creates a new instance of an appointment that is then added and saved to the DB
-        public IActionResult OnPost(string Time, string Name, int Size, string Email, int PhoneNum) //saves to DB
+        public IActionResult OnPost(string Time, string Name, int Size, string Email, string PhoneNum) //saves to DB
         {
             var appt = new Appointment
             {
