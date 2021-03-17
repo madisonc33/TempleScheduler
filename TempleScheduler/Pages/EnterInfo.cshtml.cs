@@ -58,13 +58,15 @@ namespace TempleScheduler.Pages
             Apptcontext.SaveChanges();
 
             //this then gets the time that the user successfully signed up for and changes it to not available so that 2 users can't sign up for the same time.
-            var time = Timecontext.TimeSlots
-                .Where(x => x.AvailableTime == appt.ApptTime);
+            TimeSlots time = Timecontext.TimeSlots
+                .FirstOrDefault(x => x.AvailableTime == appt.ApptTime);
 
-            foreach (var i in time)
-            {
-                i.IsAvailable = false;
-            }
+            time.IsAvailable = false;
+            Timecontext.SaveChanges();
+            //foreach (var i in time)
+            //{
+            //    i.IsAvailable = false;
+            //}
 
             //takes the user back to the home when they submit
             return RedirectToPage("Index");
