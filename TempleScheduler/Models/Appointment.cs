@@ -5,6 +5,7 @@ namespace TempleScheduler.Models
 {
     public class Appointment
     {
+        //this model matches with the DB table appointments and keeps track of all the data we want. They are all required.
         [Key]
         [Required]
         public int AppointmentId { get; set; }

@@ -22,7 +22,7 @@
             </tr>
         </thead>
         <tbody>
-
+            <!--loops through all the available sign up times and calls the partial view to display the time-->
             @foreach (var i in Model.AreAvailable)
             {
                 <partial name="SignUpSummary" model="i" />

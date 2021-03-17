@@ -12,6 +12,7 @@
     <!--<input type="hidden" asp-for="TimeId" />-->
     <div asp-validation-summary="All"></div>
     <div>
+        <!--this value is brought in from the model and is converted to a more readable format. It is a readonly so that it is not editable by the user-->
         <label asp-for="Time">Time:</label>
         <input size="30" asp-for="Time" name="Time" value="@Model.ReserveTime.ToString("dddd, dd MMMM yyyy, h:mm tt")" readonly required />
     </div>
