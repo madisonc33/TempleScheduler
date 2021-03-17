@@ -51,8 +51,8 @@ namespace TempleScheduler.Pages
                 ApptTime = DateTime.Parse(Time),
                 Name = Name,
                 Size = Size,
-                Email = Email
-                PhoneNum = Int64.Parse(PhoneNum)
+                Email = Email,
+                PhoneNum = PhoneNum
             };
             Apptcontext.appointments.Add(appt);
             Apptcontext.SaveChanges();
