@@ -55,8 +55,9 @@ namespace TempleScheduler.Pages
             TimeSlots time = Timecontext.TimeSlots
                 .FirstOrDefault(x => x.AvailableTime == appt.ApptTime);
 
-            
+
             time.IsAvailable = false;
+            Timecontext.SaveChanges();
             //foreach (var i in time)
             //{
             //    i.IsAvailable = false;
