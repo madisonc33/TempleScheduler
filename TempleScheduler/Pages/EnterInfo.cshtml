@@ -10,8 +10,8 @@
 <form class="text-center" asp-action="EnterInfo" method="post">
     <div asp-validation-summary="All"></div>
     <div>
-        <label asp-for="Time" >Time:</label>
-        <input asp-for="Time" value="@Model.ReserveTime.ToString("dddd, dd MMMM yyyy, h:mm tt")" readonly required />
+        <label asp-for="Time">Time:</label>
+        <input size="50" asp-for="Time" value="@Model.ReserveTime.ToString("dddd, dd MMMM yyyy, h:mm tt")" readonly required />
     </div>
     <div>
         <label asp-for="Name">Name of Group:</label>
