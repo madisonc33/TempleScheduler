@@ -52,13 +52,15 @@ namespace TempleScheduler.Pages
             Apptcontext.appointments.Add(appt);
             Apptcontext.SaveChanges();
 
-            var time = Timecontext.TimeSlots
-                .Where(x => x.AvailableTime == appt.ApptTime);
+            TimeSlots time = Timecontext.TimeSlots
+                .FirstOrDefault(x => x.AvailableTime == appt.ApptTime);
 
-            foreach (var i in time)
-            {
-                i.IsAvailable = false;
-            }
+            
+            time.IsAvailable = false;
+            //foreach (var i in time)
+            //{
+            //    i.IsAvailable = false;
+            //}
 
             return RedirectToPage("Index");
         }
