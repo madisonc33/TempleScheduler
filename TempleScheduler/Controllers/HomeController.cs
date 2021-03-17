@@ -52,7 +52,7 @@ namespace TempleScheduler.Controllers
                 AppointmentContext.appointments.Add(appt);
                 AppointmentContext.SaveChanges();
             }
-            return View();
+            return View("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

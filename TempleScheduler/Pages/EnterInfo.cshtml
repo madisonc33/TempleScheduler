@@ -7,29 +7,29 @@
     <h2 class="bg-secondary mb-3 text-white text-center">Enter Your Group Information for Your Upcoming Visit</h2>
 </div>
 
-<form class="text-center" asp-action="/EnterInfo" method="post">
+<form id="@Model.ReserveTime" class="text-center" asp-page="/EnterInfo" method="post">
     <!--<input type="hidden" asp-for="TimeId" />-->
     <div asp-validation-summary="All"></div>
     <div>
         <label asp-for="Time">Time:</label>
-        <input size="30" asp-for="Time" value="@Model.ReserveTime.ToString("dddd, dd MMMM yyyy, h:mm tt")" readonly required />
+        <input size="30" asp-for="Time" name="Time" value="@Model.ReserveTime.ToString("dddd, dd MMMM yyyy, h:mm tt")" readonly required />
     </div>
     <div>
         <label asp-for="Name">Name of Group:</label>
-        <input asp-for="Name" required />
+        <input asp-for="Name" name="Name" required />
     </div>
     <br />
 
     <label asp-for="Size">Size of Group:</label>
-    <input asp-for="Size" required />
+    <input asp-for="Size" name="Size" required />
     <br />
 
     <label asp-for="Email">Email Address</label>
-    <input asp-for="Email" required />
+    <input asp-for="Email" name="Email" required />
     <br />
 
     <label asp-for="PhoneNum">Phone Number</label>
-    <input asp-for="PhoneNum" /> <!--OPTIONAL-->
+    <input asp-for="PhoneNum" name="PhoneNum" /> <!--OPTIONAL-->
     <br />
 
     <br /><br />

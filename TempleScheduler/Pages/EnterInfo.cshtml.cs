@@ -33,12 +33,12 @@ namespace TempleScheduler.Pages
             //Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
         }
 
-        public IActionResult OnPost(Appointment appt) //saves to DB
+        public IActionResult OnPost(string Time, string Name, int Size, string Email, int PhoneNum) //saves to DB
         {
             //Appointment appointment = context.appointments.FirstOrDefault(a => a.TimeId == timeId);
-            context.Add(appt);
+            //context.Add(appt);
 
-            return RedirectToPage("index");
+            return RedirectToPage("Index");
         }
 
 
